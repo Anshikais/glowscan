@@ -1,12 +1,10 @@
 # AI-Based Skin Analysis and Recommendation System
-
-A placement-ready B.Tech final year project containing a Full-Stack Web Application for Skin Analysis using CNN (MobileNetV2).
+ Project containing a Full-Stack Web Application for Skin Analysis using CNN (MobileNetV2).
 
 ## Structural Overview
 - `frontend/`: React + Tailwind CSS web application.
 - `backend/`: FastAPI backend providing REST endpoints.
 - `model/`: AI Model training logic and inference wrapper.
-- `dataset/`: Directory to place datasets (e.g., Kaggle Oily-Dry-Normal Skin dataset).
 - `docs/`: API and deployment documentation.
 
 ## Setup Instructions
@@ -26,9 +24,6 @@ Requires Node.js 18+
 2. Install dependencies: `npm install`
 3. Start the dev server: `npm run dev`
 
-### AI Model (Mock vs Training)
-- By default, the application runs a lightweight pre-trained MobileNetV2 architecture.
-- For academic demonstration, uncomment the mock layer in `backend/routers/analyze.py` if heavy torch inference lags your computer.
 
-## Deployment
-See `docs/deployment.md` for information on how to deploy this stack.
+
+
