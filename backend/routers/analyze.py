@@ -1,3 +1,4 @@
+import os
 from fastapi import APIRouter, Depends, HTTPException, UploadFile, File
 from sqlalchemy.orm import Session
 import shutil
@@ -5,7 +6,6 @@ import uuid
 import json
 import requests
 from PIL import Image
-import os
 import models
 import schemas
 import auth
