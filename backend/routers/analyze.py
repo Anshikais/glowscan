@@ -1,13 +1,9 @@
 from fastapi import APIRouter, Depends, HTTPException, UploadFile, File
 from sqlalchemy.orm import Session
-
-import os
 import shutil
 import uuid
 import json
 import requests
-import sys
-
 from PIL import Image
 
 import models
@@ -16,17 +12,7 @@ import auth
 
 from database import get_db
 
-# IMPORT AI MODEL
-sys.path.append(
-    os.path.abspath(
-        os.path.join(
-            os.path.dirname(__file__),
-            "../../model"
-        )
-    )
-)
-
-from inference import (
+from model.inference import (
     analyze_skin_image,
     get_recommendations,
     get_detailed_skincare_data
