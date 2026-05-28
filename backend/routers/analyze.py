@@ -5,7 +5,7 @@ import uuid
 import json
 import requests
 from PIL import Image
-
+import os
 import models
 import schemas
 import auth
