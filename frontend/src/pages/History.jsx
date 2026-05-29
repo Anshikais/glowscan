@@ -61,10 +61,7 @@ export default function History() {
     const fetchHistory = async () => {
 
       try {
-
-        const response = await request(
-          'http://localhost:8001/history/'
-        );
+          const response = await request('/history/');
 
         if (!response.ok) {
 
@@ -106,13 +103,9 @@ export default function History() {
   const deleteHistory = async (id) => {
 
     try {
-
-      await request(
-        `http://localhost:8001/history/${id}`,
-        {
+         await request(`/history/${id}`, {
           method: 'DELETE',
-        }
-      );
+        });
 
       setHistory((prev) =>
         prev.filter(
@@ -386,11 +379,11 @@ export default function History() {
 
   <div className="w-full md:w-32 h-32 rounded-2xl overflow-hidden bg-slate-950 border border-white/5 flex-shrink-0">
 
-    <img
-      src={`http://localhost:8001/${scan.image_path}`}
-      alt="scan"
-      className="w-full h-full object-cover"
-    />
+        <img
+  src={`${import.meta.env.VITE_API_URL}/${scan.image_path}`}
+  alt="scan"
+  className="w-full h-full object-cover"
+/>
 
   </div>
 )}

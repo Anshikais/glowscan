@@ -48,7 +48,7 @@ function SyncClerkAuth({ children }) {
         }
 
         const response = await fetch(
-          'http://localhost:8001/auth/clerk-login',
+          `${import.meta.env.VITE_API_URL}/auth/clerk-login`,
           {
             method: 'POST',
 

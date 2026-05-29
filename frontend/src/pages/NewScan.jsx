@@ -240,7 +240,7 @@ Rules:
       console.log(parsed);
 
       setResult(parsed);
-      await fetch("http://localhost:8001/history/save", {
+      await fetch( `${import.meta.env.VITE_API_URL}/history/save`, {
 
   method: "POST",
 
@@ -259,8 +259,6 @@ Rules:
     confidence: parsed.confidence,
 
     timestamp: new Date(),
-
-    seven_day_plan: parsed.seven_day_plan,
 
     recommendations: parsed.recommendations,
   }),

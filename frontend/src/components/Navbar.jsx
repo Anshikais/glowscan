@@ -14,7 +14,7 @@ export default function Navbar() {
     const token = localStorage.getItem('token');
     if (!token) return;
     try {
-      const response = await request('http://localhost:8001/notifications/');
+      const response = await request(`${import.meta.env.VITE_API_URL}/notifications/`);
       if (response.ok) {
         const data = await response.json();
         setNotifications(data);
@@ -32,7 +32,7 @@ export default function Navbar() {
 
   const handleMarkAllRead = async () => {
     try {
-      const response = await request('http://localhost:8001/notifications/read-all', {
+      const response = await request(`${import.meta.env.VITE_API_URL}/notifications/read-all`, {
         method: 'POST'
       });
       if (response.ok) {
@@ -45,7 +45,7 @@ export default function Navbar() {
 
   const handleMarkRead = async (id) => {
     try {
-      const response = await request(`http://localhost:8001/notifications/${id}/read`, {
+      const response = await request(`${import.meta.env.VITE_API_URL}/notifications/${id}/read`, {
         method: 'POST'
       });
       if (response.ok) {

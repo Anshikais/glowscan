@@ -9,7 +9,9 @@ export default function MockInbox() {
   const fetchEmails = async () => {
     setLoading(true);
     try {
-      const response = await fetch('http://localhost:8001/uploads/email_sent.log');
+      const response = await fetch(
+  `${import.meta.env.VITE_API_URL}/uploads/email_sent.log`
+);
       if (response.status === 404) {
         setEmails([]);
         return;

@@ -20,8 +20,9 @@ export default function DermatologistFinder() {
     setResults(null);
 
     try {
-      const response = await request(`http://localhost:8001/dermatologists/?city=${encodeURIComponent(city.trim())}`);
-
+     const response = await request(
+  `/dermatologists/?city=${encodeURIComponent(city.trim())}`
+);
       const data = await response.json();
       if (!response.ok) throw new Error(data.detail || 'Search failed');
 
